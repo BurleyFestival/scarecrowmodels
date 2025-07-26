@@ -10,9 +10,16 @@
 <a-scene embedded vr-mode-ui="enabled: false;" arjs="debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
 
     <a-assets>
-		<img id="grid" src="images/border.png" />
-		<img id="earth-flat" src="images/earth-flat.jpg" />
-		<img id="earth-sphere" src="images/earth-sphere.jpg" />
+		.<img id="grid" src="images/border.png" />
+		<img id="bsf-sphere" src="images/bsfsquare.jpg" />
+		<a-asset-item id="cap" src="models/cap.gltf"></a-asset-item>
+		<a-asset-item id="teapot" src="models/teapot.gltf"></a-asset-item>	
+        <img id="xpos" src="images/box-sides/righttopflower.jpg">
+        <img id="xneg" src="images/box-sides/otherflower.jpg">
+        <img id="ypos" src="images/box-sides/bottomflower.jpg">
+        <img id="yneg" src="images/box-sides/rightflower.jpg">
+        <img id="zpos" src="images/box-sides/midFlower.jpg">
+        <img id="zneg" src="images/box-sides/leftFlower.jpg">	    
 	</a-assets>
     
     <a-marker type="pattern" url="data/kanji.patt">
@@ -22,24 +29,44 @@
     </a-marker>
     
     <a-marker type="barcode" value="0">
-        <a-box position="0 0.5 0" 
-               material="src: #grid; color: yellow; transparent: true; opacity: 0.50;">
-        </a-box>
+        <a-entity   position="0 0 0" 
+                    rotation="0 0 0"
+                    scale="0.10 0.10 0.10"
+                    gltf-model="#cap" >
+        </a-entity>
     </a-marker>
 
     <a-marker type="barcode" value="1">
-        <a-plane position="0 0 0" 
-                 rotation="-90 0 0"
-               material="src: #earth-flat;">
-        </a-plane>
+        <a-entity   position="0 0 0" 
+                    rotation="0 0 0"
+                    scale="0.10 0.10 0.10"
+                    gltf-model="#teapot" >
+        </a-entity>
+	    
     </a-marker>
 
     <a-marker type="barcode" value="2">
         <a-sphere position="0 0.5 0" 
-               material="src: #earth-sphere; transparent: true; opacity: 0.95;">
+               material="src: #bsf-sphere; transparent: true; opacity: 0.95;"
+		animation__rotate = "property: rotation; dur: 8000; easing: linear; dir: normal; from:0 0 0; to: 0 360 0; loop: true;">
         </a-sphere>
     </a-marker>
-    
+
+    <a-marker type="barcode" value="3">
+        <a-box position="0 0.5 0"
+               multisrc="srcs:#xpos,#xneg,#ypos,#yneg,#zpos,#zneg"
+               material="transparent: true; opacity: 0.95; side: double;">
+        </a-box>
+    </a-marker>
+
+    <a-marker type="barcode" value="4">
+        <a-entity   position="0 0 0" 
+                    rotation="0 0 0"
+                    scale="0.10 0.10 0.10"
+                    gltf-model="#cap" >
+        </a-entity>
+    </a-marker>
+	
     <a-entity camera></a-entity>
     
 </a-scene>
