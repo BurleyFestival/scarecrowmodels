@@ -7,7 +7,7 @@
   
 <!-- set detectionMode and matrixCodeType to enable barcode marker detection and custom pattern files -->
 
-<a-scene embedded vr-mode-ui="enabled: false;" arjs="debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
+<a-scene embedded vr-mode-ui="enabled: false;" arjs="debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3_hamming_6_3;"><!-- 3x3 -->
 
     <a-assets>
 		.<img id="grid" src="images/border.png" />
@@ -45,6 +45,15 @@
 	    
     </a-marker>
 
+    <a-marker type="barcode" value="07">
+        <a-entity   position="0 0 0" 
+                    rotation="0 0 0"
+                    scale="0.10 0.10 0.10"
+                    gltf-model="#teapot" >
+        </a-entity>
+	    
+    </a-marker>
+
     <a-marker type="barcode" value="2">
         <a-sphere position="0 0.5 0" 
                material="src: #bsf-sphere; transparent: true; opacity: 0.95;"
@@ -53,6 +62,20 @@
     </a-marker>
 
     <a-marker type="barcode" value="3">
+        <a-box position="0 0.5 0"
+               multisrc="srcs:#xpos,#xneg,#ypos,#yneg,#zpos,#zneg"
+               material="transparent: true; opacity: 0.95; side: double;">
+        </a-box>
+    </a-marker>
+
+    <a-marker type="barcode" value="14">
+        <a-box position="0 0.5 0"
+               multisrc="srcs:#xpos,#xneg,#ypos,#yneg,#zpos,#zneg"
+               material="transparent: true; opacity: 0.95; side: double;">
+        </a-box>
+    </a-marker>
+
+    <a-marker type="barcode" value="15">
         <a-box position="0 0.5 0"
                multisrc="srcs:#xpos,#xneg,#ypos,#yneg,#zpos,#zneg"
                material="transparent: true; opacity: 0.95; side: double;">
