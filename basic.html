@@ -1,8 +1,11 @@
 <!doctype HTML>
 <html>
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-<script src="js/aframe.min.js"></script>
-<script src="js/aframe-ar.js"></script>
+<!--script src="js/aframe.min.js"></script>
+<script src="js/aframe-ar.js"></script-->
+<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+<!--script src="https://google-ar.github.io/three.ar.js/dist/three.ar.js"></script-->
+<script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>	
 <body style="margin: 0px; overflow: hidden;">
   
 <!-- set detectionMode and matrixCodeType to enable barcode marker detection and custom pattern files -->
@@ -33,7 +36,7 @@
         <a-entity   position="0 0 0" 
                     rotation="0 0 0"
                     scale="0.10 0.10 0.10"
-                    gltf-model="#tree" ><!--#cap-->
+                    gltf-model="#cap" ><!--#cap-->
         </a-entity>
     </a-marker>
 
