@@ -16,8 +16,8 @@
     <a-assets>
 		<img id="grid" src="images/border.png" />
 		<img id="bsf-sphere" src="images/bsfsquare.jpg">
-		<a-asset-item id="cap" src="models/kettle.gltf"></a-asset-item>		    
-		<a-asset-item id="teapot" src="models/cap.glb"></a-asset-item>
+		<a-asset-item id="teapot" src="models/kettle.gltf"></a-asset-item>		    
+		<a-asset-item id="cap" src="models/cap.glb"></a-asset-item>
 		<a-asset-item id="tree" src="models/tree.gltf"></a-asset-item>	    
         <img id="xpos" src="images/box-sides/righttopflower.jpg">
         <img id="xneg" src="images/box-sides/otherflower.jpg">
@@ -37,8 +37,9 @@
         <a-entity   position="0 0 0" 
                     rotation="0 0 0"                    
 		scale="0.60 0.60 0.60"
-                    glb-model="#teapot" >
-
+                    gltf-model="#teapot"  	
+		animation__rotate = "property: rotation; dur: 9000; easing: linear; dir: normal; from:0 0 0; to: 0 360 0; loop: true;">
+		>
         </a-entity>
     </a-marker>
 
