@@ -24,10 +24,8 @@
         <img id="xpos" src="images/box-sides/righttopflower.jpg">
         <img id="xneg" src="images/box-sides/otherflower.jpg">
         <img id="ypos" src="images/box-sides/bottomflower.jpg">
-        <img id="yneg" src="images/box-sides/rightflower.jpg">
         <img id="zpos" src="images/box-sides/midFlower.jpg">
         <img id="zneg" src="images/box-sides/leftFlower.jpg">	
-		<img id="earth-sphere" src="images/earth-sphere.jpg" />
 	</a-assets>
     
     <!--a-marker type="pattern" url="data/kanji.patt">
@@ -65,7 +63,7 @@
 
     <a-marker type="barcode" value="3">
         <a-box position="0 0.5 0"
-               multisrc="srcs:#xpos,#xneg,#ypos,#yneg,#zpos,#zneg"
+               multisrc="srcs:#xpos,#xneg,#ypos,#ypos,#zpos,#zneg"
                material="transparent: true; opacity: 0.95; side: double;"
 		                    scale="3.0 3.0 3.0"		
 		animation__rotate = "property: rotation; dur: 8000; easing: linear; dir: normal; from:0 0 0; to: 0 360 0; loop: true;">		
@@ -92,7 +90,7 @@
 
     <a-marker type="barcode" value="6">
 		<a-sphere position="0 0.5 0" 
-               material="src: #earth-sphere; transparent: true; opacity: 0.95;"
+               material="src: #xneg; transparent: true; opacity: 0.95;"
                animation__rotate = "property: rotation; dur: 8000; easing: linear; dir: normal; from:0 0 0; to: 0 360 0; loop: true;">
         </a-sphere>
     </a-marker>
